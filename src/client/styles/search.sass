@@ -1,0 +1,47 @@
+#search
+  background-color: lightgrey
+  padding: 1em
+
+#search-trip-form
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  fieldset
+    margin: .5em auto
+
+  #search-trip-location-label, #search-trip-date-label
+    font-weight: bold
+    font-size: 1.5em
+
+  input
+    font-size: 1.5em
+    padding: .2em
+    border: none
+    background: none
+    border-bottom: 1px solid grey
+
+  #search-trip-buttons
+    margin: 1em auto
+    text-align: center
+    width: 80vw
+
+  button
+    width: 45%
+    border: none
+    border: 2px solid #000
+    transition: background .3s ease-in-out, border .3s ease-in-out
+
+    &:disabled
+      background: transparent
+      border: 2px solid grey
+      &:hover
+        background: transparent
+        border: 2px solid grey
+    &:hover
+      border: 2px solid #fff
+      background: transparent
+
+#search-trip-error
+  color: red

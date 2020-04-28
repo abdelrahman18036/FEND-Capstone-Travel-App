@@ -1,0 +1,82 @@
+#results
+  background-color: pink
+
+.trip
+  display: grid
+  grid-template-columns: auto
+  grid-template-rows: repeat(2, minmax(1fr, auto))
+  grid-template-areas: "image" "content"
+  border-bottom: 5px solid #fff
+
+  &:nth-last-child()
+    border: none
+
+#trip-data
+  grid-area: content
+  padding: 1em
+
+  #trip-location
+    font-size: 2em
+    line-height: 2
+    font-weight: bold
+
+  #trip-time
+    font-size: 1.5em
+    line-height: 1.5
+    font-weight: bold
+
+  #trip-waiting-time
+    font-size: 1.5em
+    line-height: 1.5
+
+#trip-buttons
+  margin: 1em auto
+  text-align: center
+
+  button
+    width: 45%
+    border: none
+    border: 2px solid #000
+    transition: background .3s ease-in-out, border .3s ease-in-out
+
+    &:disabled
+      background: transparent
+      border: 2px solid grey
+      &:hover
+        background: transparent
+        border: 2px solid grey
+    &:hover
+      border: 2px solid #fff
+      background: transparent
+
+#trip-weather
+  margin: 1em auto
+
+  #trip-weather-headline
+    font-size: 1.2em
+    line-height: 1.5
+
+  #trip-weather-conditions
+    margin: .5em auto
+
+  #trip-weather-summary
+    font-size: 1.2em
+    line-height: 1.5
+    margin: .5em auto
+
+#trip-image
+  grid-area: image
+
+@media screen and (min-width: 600px) 
+  .trip
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: 1fr
+    grid-template-areas: "image content"
+
+  #trip-image
+    padding: .5em
+    max-width: 320px
+
+  #trip-data
+    #trip-location
+      line-height: 1.5
